@@ -9,6 +9,8 @@ class Children extends React.Component {
         // let name = this.props.name
         // let age = this.props.age
         // cách 3
+	//dùng đc như này vì this.props là 1 obj nên cần khai báo {}
+	//chỉ dùng đc khi đặt tên biến trùng tên key của obj
         let { name, age, jobs } = this.props //destrucering
         //#9
         return (

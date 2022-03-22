@@ -1,0 +1,13 @@
+- JSX chỉ trả về 1 khối thẻ như <></>, <div></div>(1 lớp bọc ở ngoài cùng)
+- state là gì?
++ là bộ nhớ của react giúp lưu lại các biến, (là trạng thái)
++ là một obj
++ state thay đổi thì UI được render lại cho ứng với state
+- props là gì?
++ là những gì thuộc về cha có thể đc truyền đi cho con
++ giải quyết việc truyền data của react
++ có thể dùng func gọi từ con lên cha, k thể truyền data
++ muốn truyền thì phải để trong {}
++ this.props là kiểm tra data truyền xuống
++ props là input đầu vào
++ truyền props giúp tái sử dụng components

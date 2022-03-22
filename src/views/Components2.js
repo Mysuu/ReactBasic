@@ -42,6 +42,7 @@ class Components2 extends React.Component {
 
 
                 {/* <Children
+			// tên trước dấu = là định nghĩa props
                     name={this.state.firstName}
                     age={'23'}
                     //đặt tên là gì cũng được
