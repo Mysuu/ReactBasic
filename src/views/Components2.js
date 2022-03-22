@@ -1,50 +1,57 @@
 import React from 'react'
-import Children from './Children'
+// import Children from './Children'
+import Children2 from './Children2'
+import AddComponents from './AddComponents'
 
 class Components2 extends React.Component {
 
     //key:value
     state = {
-        firstName: '',
-        lastName: ''
+        // #12
+        arrJobs: [
+            //thuộc tính id, title, salary là 3 phần tử là element
+            { id: 'job1', title: 'frontend', salary: '1000' },
+            { id: 'job2', title: 'backend', salary: '1200' },
+            { id: 'job3', title: 'tester', salary: '700' }
+        ]
     }
 
-    handleChangeFirstName = (e) => {
+    //job là input đầu vào
+    addNewJob = (job) => {
+        // console.log('check job', job);
         this.setState({
-            firstName : e.target.value
+            //... là toán tử coppy, ở đây sẽ coppy lại hết dữ liệu trong arrJobs
+            // , job giống push(job), đẩy dữ liệu vào thêmn arrjobs
+            arrJobs: [...this.state.arrJobs, job]
         })
     }
 
-    handleChangeLastName = (e) => {
+    deleteJob = (job) => {
         this.setState({
-            lastName : e.target.value
+            arrJobs: [...this.state.arrJobs.filter(item => item.id !== job.id)]
         })
     }
-
-    handleSubmit = (e) => {
-        e.preventDefault(e) //ngăn k cho refesh
-        console.log('check data:', this.state)
-    }
-
     render() {
 
         //#9
         return (
             <>
-                <form>
-                    <label htmlFor="fname">First name:</label><br/>
-                    <input type="text" value={this.state.firstName} 
-                        onChange={(e) => this.handleChangeFirstName(e)} /><br/>
-                    <label htmlFor="lname">Last name:</label><br/>
-                    <input type="text" value={this.state.lastName}
-                        onChange={(e) => this.handleChangeLastName(e)}
-                    /><br/><br/>
-                    <input type="submit"
-                        onClick={(e) => this.handleSubmit(e)}
-                    />
-                </form><br />
+                <AddComponents
+                    addNewJob={this.addNewJob} // có input đầu vào là job nên không để addNewJob()
+                />
 
-                <Children name={"one"} age={'23'}/>
+
+                {/* <Children
+                    name={this.state.firstName}
+                    age={'23'}
+                    //đặt tên là gì cũng được
+                    //#12
+                    jobs={this.state.arrJobs}
+                /> */}
+                <Children2
+                    jobs={this.state.arrJobs}
+                    deleteJob={this.deleteJob}
+                />
             </>
         )
 
