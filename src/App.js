@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import ListUser from './axios/ListUser';
+// import ListUser from './axios/ListUser';
 // import Components from './views/Components'
-// import Components2 from './views/Components2'
+import Components2 from './views/Components2'
 // import Todolist from './todolist/Todolist'
 
 function App() {
@@ -13,9 +13,10 @@ function App() {
         {/* <p>Simple TodoApp</p> */}
         <br />
         {/* <Components /> */}
-        {/* <Components2 /> */}
+        <Components2 />
         {/* <Todolist /> */}
-        <ListUser />
+        {/* <ListUser /> */}
+
       </header>
     </div>
   );
